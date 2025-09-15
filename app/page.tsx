@@ -1,11 +1,13 @@
 import CtaButton from "@/components/cta-button";
+import ThreeCanvas from "@/components/three-canvas";
+import { CharacterModel } from "@/components/models/character";
 
 export default function Home() {
   return (
     <>
-      <section className="first-section section bg-[url(/grid.png)] bg-cover bg-no-repeat bg-center bg-earth-dark-green">
-        <div className="section-wrapper relative p-14 flex justify-between items-center h-full">
-          <div className="hero-text-cta space-y-8">
+      <section className="first-section section pe-0 bg-[url(/grid.png)] bg-cover bg-no-repeat bg-center bg-earth-dark-green">
+        <div className="section-wrapper relative flex justify-between items-center h-full">
+          <div className="hero-text-cta space-y-8 py-14 ps-14">
             <div className="text-part space-y-3">
               <h1 className="text-earth-white text-5xl font-bold">Building Engaging &</h1>
               <h1 className="text-earth-white text-5xl font-bold">Scalable Web Experiences</h1>
@@ -15,12 +17,14 @@ export default function Home() {
               <CtaButton buttonText="Get in Touch" />
             </div>
           </div>
-          <div className="3d-model-part">
-
+          <div className="3d-model-part w-[45%] h-full">
+            <ThreeCanvas>
+              <CharacterModel />
+            </ThreeCanvas>
           </div>
           <div className="info-3d flex flex-col justify-center items-end absolute bottom-10 right-7">
-            <p className="text-earth-green font-normal text-xl leading-7">right-click to change animation</p>
-            <p className="text-earth-green font-normal text-xl leading-7">left-click to look detail</p>
+            <p className="text-earth-green font-normal text-xl leading-7">double-click to look detail</p>
+            <p className="text-earth-green font-normal text-xl leading-7">click to change animation</p>
           </div>
         </div>
       </section>

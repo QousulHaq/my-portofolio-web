@@ -18,7 +18,7 @@ export default function Home() {
             </div>
           </div>
           <div className="3d-model-part w-[45%] h-full">
-            <ThreeCanvas>
+            <ThreeCanvas fov={25}>
               <CharacterModel />
             </ThreeCanvas>
           </div>

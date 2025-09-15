@@ -44,5 +44,5 @@ body {
 }
 
 .section {
-  @apply w-[100%] h-[100vh] ps-7 pe-2.5 pb-7 pt-[84px];
+  @apply w-[100%] h-[100vh] px-7 pb-7 pt-[84px];
 }

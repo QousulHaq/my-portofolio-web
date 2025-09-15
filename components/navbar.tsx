@@ -37,7 +37,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                     </ul>
                 </div>
             </nav>
-            <div className="navbar w-[100%] h-[100vh] bg-earth-white fixed top-0 left-0 z-50 overflow-y-scroll" style={{ clipPath: "inset(84px 28px 28px 28px round 12px)", WebkitClipPath: "inset(84px 28px 28px 28px round 12px)", margin: 0, padding: 0 }}>
+            <div className="navbar w-[100%] h-[100vh] bg-earth-white fixed top-0 left-0 z-50 overflow-hidden" style={{ clipPath: "inset(84px 28px 28px 28px round 12px)", WebkitClipPath: "inset(84px 28px 28px 28px round 12px)", margin: 0, padding: 0 }}>
                 {children}
             </div>
         </>

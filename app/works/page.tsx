@@ -22,9 +22,22 @@ export default function Works() {
       ]
     },
     {
+      title: "Personal Portfolio Website",
+      description: `A responsive portfolio website designed and built to showcase my projects, skills, and professional journey. It emphasizes clean UI, smooth navigation, and engaging presentation to reflect both technical expertise and creativity.`,
+      background: "bg-earth-dark-green",
+      link: "https://my-portofolio-web-six.vercel.app",
+      github: "https://github.com/QousulHaq/my-portofolio-web",
+      imageUrls: [
+        {
+          link: "/foto-porto-myweb-1.png",
+          type: "image"
+        },
+      ]
+    },
+    {
       title: "Masami – Family Recipe Sharing Platform",
       description: `Masami is a web app I built to document and share family recipes. It supports full recipe CRUD, multi-family “rooms” under one account, and role-based features where members can request dishes and family heads can approve or decline them. The platform is designed to preserve culinary traditions while fostering collaboration within families.`,
-      background: "bg-earth-dark-green",
+      background: "bg-earth-brown",
       link: "https://recipe-web-frontend-five.vercel.app/dashboard",
       github: "https://github.com/QousulHaq/front-end-sellerpintar-web",
       imageUrls: [
@@ -36,26 +49,13 @@ export default function Works() {
     },
     {
       title: "Article Management Website",
-      description: `A CRUD-based article platform built with admin and user roles, developed as part of a recruitment test for Sellerpintar. The main challenge was implementing a custom WYSIWYG editor using Slate.js, ensuring flexibility and a smooth writing experience.`,
-      background: "bg-earth-brown",
+      description: `A CRUD-based article platform built with admin and user roles, developed as part of a recruitment test for Sellerpintar. The main challenge was implementing a custom WYSIWYG editor using Slate.js, ensuring flexibility and a smooth writing experience. try to login using oioioi and password for (user) and banzai and password for (admin) [username, password]`,
+      background: "bg-earth-green",
       link: "https://front-end-sellerpintar-web.vercel.app/login",
       github: "https://github.com/QousulHaq/front-end-sellerpintar-web",
       imageUrls: [
         {
           link: "/foto-porto-sellerpintar-1.png",
-          type: "image"
-        },
-      ]
-    },
-    {
-      title: "Personal Portfolio Website",
-      description: `A responsive portfolio website designed and built to showcase my projects, skills, and professional journey. It emphasizes clean UI, smooth navigation, and engaging presentation to reflect both technical expertise and creativity.`,
-      background: "bg-earth-green",
-      link: "https://my-portofolio-web-six.vercel.app",
-      github: "https://github.com/QousulHaq/my-portofolio-web",
-      imageUrls: [
-        {
-          link: "/foto-porto-myweb-1.png",
           type: "image"
         },
       ]

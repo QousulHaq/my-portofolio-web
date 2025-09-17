@@ -89,7 +89,7 @@ const WorkItem = ({
                 <div className="cta flex justify-center items-center gap-3">
                     <CtaButton buttonText="Take a peek 👀" href={porto.link} />
                     {porto.github !== "" && (
-                        <Link href={porto.github} className="bg-icon p-3 md:p-4 rounded-full bg-slate-900">
+                        <Link href={porto.github} className="bg-icon p-3 md:p-4 rounded-full bg-slate-900" target="__blank">
                             <GithubIcon />
                         </Link>
                     )}

@@ -58,7 +58,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                         whileHover={"hovered"}
                         initial={"initial"}
                     >
-                        <Link href={"/"} className='relative overflow-hidden'>
+                        <Link href={"https://instagram.com/qousulhaq"} className='relative overflow-hidden' target='__blank'>
                             <motion.p className='font-medium text-base leading-7' variants={textVariant}>
                                 <motion.span
                                     variants={{

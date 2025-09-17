@@ -14,7 +14,7 @@ export default function Home() {
               <p className="text-earth-white text-xl font-normal w-[645px]">I’m <span className="font-lora italic">Ahmad Qousul Haq</span>, a Frontend Developer passionate about crafting interactive and user-friendly digital solutions with React.js, Laravel, and modern web technologies.”</p>
             </div>
             <div className="cta-part">
-              <CtaButton buttonText="Get in Touch" />
+              <CtaButton buttonText="Let's Connect 🤝" href="https://id.linkedin.com/in/ahmad-qousul-haq" />
             </div>
           </div>
           <div className="3d-model-part w-[45%] h-full">

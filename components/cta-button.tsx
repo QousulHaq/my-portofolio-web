@@ -4,11 +4,11 @@ import { FrasurbaneArrow } from "@/components/icons/arrow";
 import * as motion from "motion/react-client"
 import Link from 'next/link';
 
-const CtaButton = ({ buttonText }: { buttonText: string }) => {
+const CtaButton = ({ buttonText, href }: { buttonText: string, href: string }) => {
 
     const [isHovered, setIsHovered] = useState<boolean>(false)
     return (
-        <Link href={"#"}>
+        <Link href={href} target='__blank'>
             <motion.div className={`button group hover:bg-earth-green bg-earth-light-green px-3 py-2 rounded-full flex ${isHovered ? "flex-row-reverse" : ""} justify-center items-center gap-2.5 w-fit overflow-hidden`} whileHover={"hovered"} onMouseEnter={() => setIsHovered((prev) => !prev)} onMouseLeave={() => setIsHovered((prev) => !prev)}>
                 <motion.div layout variants={{ initial: { rotate: 0 }, hovered: { rotate: 45 } }} className="arrow-container bg-earth-brown group-hover:bg-earth-light-green rounded-full px-2.5 py-3 z-50">
                     <FrasurbaneArrow className="-rotate-45" />

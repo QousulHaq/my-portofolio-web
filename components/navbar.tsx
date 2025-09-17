@@ -84,7 +84,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                             },
                         }}
                     >
-                        <Link href="https://drive.google.com/file/d/1uMmhOm5d9v8vZUbF-8MAbkj3L9yQybnG/view?usp=sharing" target="_blank">
+                        <Link href="https://drive.google.com/file/d/1jmzjsh67FzKj_8QcmnIEgvIzsNe7bztG/view?usp=sharing" target="_blank">
                             <ul className='list-disc list-inside'>
                                 <li className='font-medium text-xs md:text-base leading-3 md:leading-7'>
                                     Curriculum vitae

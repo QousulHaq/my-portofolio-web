@@ -17,7 +17,7 @@ export default function Works() {
       imageUrls: [
         {
           link: "/porto-pa.mp4",
-          type: "video" as "video"
+          type: "video"
         },
       ]
     },
@@ -30,7 +30,7 @@ export default function Works() {
       imageUrls: [
         {
           link: "/foto-porto-masami-1.png",
-          type: "image" as "image"
+          type: "image"
         },
       ]
     },
@@ -43,7 +43,7 @@ export default function Works() {
       imageUrls: [
         {
           link: "/foto-porto-sellerpintar-1.png",
-          type: "image" as "image"
+          type: "image"
         },
       ]
     },
@@ -56,7 +56,7 @@ export default function Works() {
       imageUrls: [
         {
           link: "/foto-porto-myweb-1.png",
-          type: "image" as "image"
+          type: "image"
         },
       ]
     },

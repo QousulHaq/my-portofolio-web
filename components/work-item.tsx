@@ -17,7 +17,7 @@ interface WorkData {
     background: string;
     link: string;
     github: string;
-    imageUrls: { link: string; type: "video" | "image" }[];
+    imageUrls: { link: string; type: string }[];
 }
 
 const WorkItem = ({
@@ -33,31 +33,43 @@ const WorkItem = ({
 }) => {
     const scrollYFormula = (i: number) => 1 / (total - 1) * i;
 
-    const scale =
-        index === 0
-            ? useTransform(scrollYProgress, [0, 1], [1, 0.8])
-            : index === total - 1
-                ? useTransform(scrollYProgress, [scrollYFormula(index - 1), 1], [0.8, 1])
-                : index === total - 2
-                    ? useTransform(scrollYProgress, [scrollYFormula(index - 1), scrollYFormula(index), 1], [0.8, 1, 0.8])
-                    : useTransform(
-                        scrollYProgress,
-                        [scrollYFormula(index - 1), scrollYFormula(index), scrollYFormula(index + 1)],
-                        [0.8, 1, 0.8]
-                    );
+    let inputRange: number[] = []
+    let outputRange: number[] = []
 
-    const rotate =
-        index === 0
-            ? useTransform(scrollYProgress, [0, 1], [0, -5])
-            : index === total - 1
-                ? useTransform(scrollYProgress, [scrollYFormula(index - 1), 1], [5, 0])
-                : index === total - 2
-                    ? useTransform(scrollYProgress, [scrollYFormula(index - 1), scrollYFormula(index), 1], [5, 0, -5])
-                    : useTransform(
-                        scrollYProgress,
-                        [scrollYFormula(index - 1), scrollYFormula(index), scrollYFormula(index + 1)],
-                        [5, 0, -5]
-                    );
+    if (index === 0) {
+        inputRange = [0, 1]
+        outputRange = [1, 0.8]
+    } else if (index === total - 1) {
+        inputRange = [scrollYFormula(index - 1), 1]
+        outputRange = [0.8, 1]
+    } else if (index === total - 2) {
+        inputRange = [scrollYFormula(index - 1), scrollYFormula(index), 1]
+        outputRange = [0.8, 1, 0.8]
+    } else {
+        inputRange = [scrollYFormula(index - 1), scrollYFormula(index), scrollYFormula(index + 1)]
+        outputRange = [0.8, 1, 0.8]
+    }
+
+    const scale = useTransform(scrollYProgress, inputRange, outputRange)
+
+    let rotateInput: number[] = []
+    let rotateOutput: number[] = []
+
+    if (index === 0) {
+        rotateInput = [0, 1]
+        rotateOutput = [0, -5]
+    } else if (index === total - 1) {
+        rotateInput = [scrollYFormula(index - 1), 1]
+        rotateOutput = [5, 0]
+    } else if (index === total - 2) {
+        rotateInput = [scrollYFormula(index - 1), scrollYFormula(index), 1]
+        rotateOutput = [5, 0, -5]
+    } else {
+        rotateInput = [scrollYFormula(index - 1), scrollYFormula(index), scrollYFormula(index + 1)]
+        rotateOutput = [5, 0, -5]
+    }
+
+    const rotate = useTransform(scrollYProgress, rotateInput, rotateOutput)
 
     return (
         <motion.section

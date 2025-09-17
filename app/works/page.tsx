@@ -51,8 +51,8 @@ export default function Works() {
       title: "Personal Portfolio Website",
       description: `A responsive portfolio website designed and built to showcase my projects, skills, and professional journey. It emphasizes clean UI, smooth navigation, and engaging presentation to reflect both technical expertise and creativity.`,
       background: "bg-earth-green",
-      link: "https://front-end-sellerpintar-web.vercel.app/login",
-      github: "",
+      link: "https://my-portofolio-web-six.vercel.app",
+      github: "https://github.com/QousulHaq/my-portofolio-web",
       imageUrls: [
         {
           link: "/foto-porto-myweb-1.png",

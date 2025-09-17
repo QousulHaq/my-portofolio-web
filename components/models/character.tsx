@@ -5,7 +5,6 @@ import { useThree } from "@react-three/fiber"
 import * as THREE from "three"
 import { GLTF } from "three-stdlib"
 import { ObjectMap } from "@react-three/fiber"
-import { useRouter } from 'next/navigation'
 
 // ---- Props tipe ----
 type ModelProps = JSX.IntrinsicElements["group"] & {
@@ -39,7 +38,6 @@ type GLTFResult = GLTF & {
 }
 
 export function CharacterModel(props: ModelProps) {
-    const router = useRouter()
     const group = useRef<THREE.Group>(null!)
     const [animationIndex, setAnimationIndex] = useState<number>(4)
 
@@ -50,14 +48,6 @@ export function CharacterModel(props: ModelProps) {
     const { viewport } = useThree()
 
     const numbers = [0, 4, 5]
-
-    // useEffect(() => {
-    //     if (nodes && materials && animations.length > 0) {
-    //         props.onLoaded(true)
-    //     } else {
-    //         props.onLoaded(false)
-    //     }
-    // }, [nodes, materials, animations, props])
 
     useEffect(() => {
         const actionName = names[animationIndex]
@@ -87,7 +77,6 @@ export function CharacterModel(props: ModelProps) {
             {...props}
             dispose={null}
             onClick={changeAnimation}
-            onDoubleClick={() => router.push('/profile')}
             scale={viewport.width < 3 ? 0.7 : 1.15}
         >
             <group name="Scene">

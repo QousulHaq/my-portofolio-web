@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect } from "react"
 import Matter from "matter-js"
+import { useViewportSize } from "@/utils/useBetterMediaQuery"
 
 const pillLabels = [
     "ReactJs", "NextJs", "Tailwind", "Laravel", "CSS",
@@ -62,6 +63,8 @@ const skills_set = [
 export default function PhysicsBox() {
     const sceneRef = useRef<HTMLDivElement | null>(null)
     const canvasRef = useRef<HTMLCanvasElement | null>(null)
+
+    const { isTabletOrMobile } = useViewportSize()
 
     useEffect(() => {
         if (!sceneRef.current || !canvasRef.current) return
@@ -190,7 +193,7 @@ export default function PhysicsBox() {
             render.canvas.remove()
             render.textures = {}
         }
-    }, [])
+    }, [isTabletOrMobile])
 
     return (
         <div

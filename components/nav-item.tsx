@@ -8,15 +8,20 @@ import { motion } from 'motion/react'
 
 import { UpRightArrow } from '@/components/icons/arrow'
 
-const NavItem = ({ href, text }: { href: string, text: string }) => {
+type NavItemProps = React.ComponentProps<"a"> & {
+    href: string,
+    text: string
+}
+
+const NavItem = ({ href, text, ...props }: NavItemProps) => {
     const pathname = usePathname();
 
     return (
-        <Link href={href}>
+        <Link href={href} {...props}>
             <motion.div className="link-wrapper flex gap-2.5 items-center justify-center" whileHover="hovered">
                 <div className="text-underline-wrapper relative">
                     <div className="text-wrapper relative overflow-hidden">
-                        <p className='font-medium text-base'>{text}</p>
+                        <p className='font-medium text-3xl md:text-base'>{text}</p>
                     </div>
                     {
                         pathname === href && (
@@ -32,7 +37,7 @@ const NavItem = ({ href, text }: { href: string, text: string }) => {
                     transition={{ duration: 0.5, type: "spring" }}
                     className="icon-wrapper"
                 >
-                    <UpRightArrow color='#000' />
+                    <UpRightArrow color='#000' className='size-10 md:size-auto' />
                 </motion.div>
             </motion.div>
         </Link >

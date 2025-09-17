@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { FrasurbaneArrow } from './icons/arrow'
 import { motion, AnimatePresence, wrap, usePresenceData } from 'motion/react'
+import { useViewportSize } from '@/utils/useBetterMediaQuery'
 
 type ImageUrlType = {
   link: string;
@@ -10,6 +11,8 @@ type ImageUrlType = {
 }
 
 const ImageCarousel = ({ imageUrls }: { imageUrls: ImageUrlType[] }) => {
+  const { isTabletOrMobile } = useViewportSize()
+
   const [selectedImage, setSelectedImage] = useState(0)
   const [directionState, setDirectionState] = useState(1)
 
@@ -20,7 +23,7 @@ const ImageCarousel = ({ imageUrls }: { imageUrls: ImageUrlType[] }) => {
   }
 
   return (
-    <div className="works-image w-[646px] relative">
+    <div className="works-image w-[300px] md:w-[646px] relative">
       <button
         className="arrow-right bg-earth-light-green w-fit px-2.5 py-3 rounded-full absolute top-1/2 -left-6 -translate-y-1/2 cursor-pointer"
         onClick={() => { setSlide(-1) }}
@@ -49,6 +52,7 @@ const ImageCarousel = ({ imageUrls }: { imageUrls: ImageUrlType[] }) => {
 export default ImageCarousel
 
 const ImageSlide = ({ imageUrl }: { imageUrl: string }) => {
+  const { isTabletOrMobile } = useViewportSize()
   const direction = usePresenceData()
   return (
     <motion.div
@@ -60,16 +64,17 @@ const ImageSlide = ({ imageUrl }: { imageUrl: string }) => {
     >
       <Image
         src={`${imageUrl}`}
-        width={646}
-        height={300}
+        width={isTabletOrMobile ? 300 : 646}
+        height={isTabletOrMobile ? 150 : 300}
         alt="project-pict"
-        className="rounded-[12px] object-cover"
+        className="rounded-[8px] md:rounded-[12px] object-cover"
       />
     </motion.div>
   )
 }
 
 const VideoSlide = ({ videoUrl }: { videoUrl: string }) => {
+  const { isTabletOrMobile } = useViewportSize()
   const direction = usePresenceData()
   return (
     <motion.div
@@ -77,9 +82,9 @@ const VideoSlide = ({ videoUrl }: { videoUrl: string }) => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 500 * direction }}
       transition={{ duration: 0.4 }}
-      className="video-wrapper w-[646px] h-[300] overflow-hidden rounded-xl flex justify-center items-end"
+      className="video-wrapper w-fit h-fit overflow-hidden rounded-xl flex justify-center items-center"
     >
-      <video width="646" height="300" controls preload="none">
+      <video width={isTabletOrMobile ? 300 : 646} height={isTabletOrMobile ? 150 : 300} controls preload="none">
         <source src="/IoT-1.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>

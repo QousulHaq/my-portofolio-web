@@ -143,13 +143,13 @@ export default function Works() {
             style={{ scale: scales[i], rotate: rotates[i] }}
             className={`first-section section sticky top-0 z-10 ${porto.background}`}
           >
-            <div className="section-wrapper relative p-14 flex flex-col justify-center items-center gap-8 h-full">
+            <div className="section-wrapper relative py-5 px-4 pt-12 md:p-14 flex flex-col justify-start md:justify-center items-center gap-5 md:gap-8 h-full">
               <ImageCarousel imageUrls={porto.imageUrls} />
               <div className="title-and-desc flex flex-col justify-center items-center gap-1.5">
-                <h1 className="text-earth-white text-3xl font-bold text-center leading-10">
+                <h1 className="text-earth-white text-2xl md:text-3xl font-bold text-center leading-7 md:leading-10">
                   {porto.title}
                 </h1>
-                <p className="text-earth-white text-xl font-normal text-center w-3/4">
+                <p className="text-earth-white text-base md:text-xl font-normal text-center w-full md:w-3/4">
                   {porto.description}
                 </p>
               </div>
@@ -162,8 +162,12 @@ export default function Works() {
       </div>
 
       <div className="info-3d flex flex-col justify-center items-end fixed bottom-14 right-14 z-[999]">
-        <p className="text-earth-green font-normal text-xl leading-7 mix-blend-difference">Scroll down ↓↓</p>
-        <p className="text-earth-green font-normal text-xl leading-7 mix-blend-difference">to look another works</p>
+        <p className="text-earth-green font-normal text-xl leading-7"></p>
+        <p className="text-earth-green font-normal text-xl leading-7"></p>
+      </div>
+      <div className="info-3d hidden md:flex flex-col justify-center items-end fixed bottom-5 md:bottom-14 right-8 md:right-14 w-1/2 z-[999]">
+        <p className="text-earth-light-green md:text-earth-green font-normal text-base md:text-xl leading-5 md:leading-7 text-right">Scroll down ↓↓</p>
+        <p className="text-earth-light-green md:text-earth-green font-normal text-base md:text-xl leading-5 md:leading-7 text-right">to look another works</p>
       </div>
     </div>
   );

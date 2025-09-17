@@ -1,13 +1,9 @@
 "use client"
 import { useEffect, useRef } from "react";
 
-import Link from "next/link";
+import WorkItem from "@/components/work-item";
 
-import CtaButton from "@/components/cta-button";
-import ImageCarousel from "@/components/image-carousel";
-import GithubIcon from "@/components/icons/social-media";
-
-import { motion, useScroll, useTransform } from "motion/react";
+import { useScroll } from "motion/react";
 import Lenis from "lenis";
 
 export default function Works() {
@@ -21,7 +17,7 @@ export default function Works() {
       imageUrls: [
         {
           link: "/porto-pa.mp4",
-          type: "video"
+          type: "video" as "video"
         },
       ]
     },
@@ -34,7 +30,7 @@ export default function Works() {
       imageUrls: [
         {
           link: "/foto-porto-masami-1.png",
-          type: "image"
+          type: "image" as "image"
         },
       ]
     },
@@ -47,7 +43,7 @@ export default function Works() {
       imageUrls: [
         {
           link: "/foto-porto-sellerpintar-1.png",
-          type: "image"
+          type: "image" as "image"
         },
       ]
     },
@@ -60,7 +56,7 @@ export default function Works() {
       imageUrls: [
         {
           link: "/foto-porto-myweb-1.png",
-          type: "image"
+          type: "image" as "image"
         },
       ]
     },
@@ -74,41 +70,6 @@ export default function Works() {
     offset: ["start start", "end end"],
   });
 
-  const scrollYFormula = (index: number) => 1 / (worksData.length - 1) * index;
-
-  // ✅ bikin semua scale dan rotate hook di sini biar konsisten
-  const scales = worksData.map((_, index) => {
-    if (index === 0) {
-      return useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-    } else if (index === worksData.length - 1) {
-      return useTransform(scrollYProgress, [scrollYFormula(index - 1), 1], [0.8, 1]);
-    } else if (index === worksData.length - 2) {
-      return useTransform(scrollYProgress, [scrollYFormula(index - 1), scrollYFormula(index), 1], [0.8, 1, 0.8]);
-    } else {
-      return useTransform(
-        scrollYProgress,
-        [scrollYFormula(index - 1), scrollYFormula(index), scrollYFormula(index + 1)],
-        [0.8, 1, 0.8]
-      );
-    }
-  });
-
-  const rotates = worksData.map((_, index) => {
-    if (index === 0) {
-      return useTransform(scrollYProgress, [0, 1], [0, -5]);
-    } else if (index === worksData.length - 1) {
-      return useTransform(scrollYProgress, [scrollYFormula(index - 1), 1], [5, 0]);
-    } else if (index === worksData.length - 2) {
-      return useTransform(scrollYProgress, [scrollYFormula(index - 1), scrollYFormula(index), 1], [5, 0, -5]);
-    } else {
-      return useTransform(
-        scrollYProgress,
-        [scrollYFormula(index - 1), scrollYFormula(index), scrollYFormula(index + 1)],
-        [5, 0, -5]
-      );
-    }
-  });
-
   useEffect(() => {
     if (!container.current) return;
     const lenis = new Lenis({
@@ -119,7 +80,7 @@ export default function Works() {
       lerp: 0.1,
       wheelMultiplier: 1,
     });
-    function raf(time: any) {
+    function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
@@ -133,34 +94,15 @@ export default function Works() {
     <div className="section-container relative w-[100%] h-[100vh] overflow-y-scroll" ref={container}>
       <div className="section-wrapper bg-black" ref={scrollTarget}>
         {worksData.map((porto, i) => (
-          <motion.section
+          <WorkItem
             key={`work-${i}`}
-            style={{ scale: scales[i], rotate: rotates[i] }}
-            className={`first-section section sticky top-0 z-10 ${porto.background}`}
-          >
-            <div className="section-wrapper relative py-5 px-4 pt-12 md:p-14 flex flex-col justify-start md:justify-center items-center gap-5 md:gap-8 h-full">
-              <ImageCarousel imageUrls={porto.imageUrls} />
-              <div className="title-and-desc flex flex-col justify-center items-center gap-1.5">
-                <h1 className="text-earth-white text-2xl md:text-3xl font-bold text-center leading-7 md:leading-10">
-                  {porto.title}
-                </h1>
-                <p className="text-earth-white text-base md:text-xl font-normal text-center w-full md:w-3/4">
-                  {porto.description}
-                </p>
-              </div>
-              <div className="cta flex justify-center items-center gap-3">
-                <CtaButton buttonText="Take a peek 👀" href={porto.link} />
-                {
-                  porto.github !== "" && (
-                    <Link href={porto.github} className="bg-icon p-3 md:p-4 rounded-full bg-slate-900">
-                      <GithubIcon />
-                    </Link>
-                  )
-                }
-              </div>
-            </div>
-          </motion.section>
+            porto={porto}
+            index={i}
+            scrollYProgress={scrollYProgress}
+            total={worksData.length}
+          />
         ))}
+
       </div>
       <div className="info-3d flex flex-col justify-center items-end fixed bottom-5 md:bottom-14 right-8 md:right-14 z-[999] w-fit">
         <p className="text-earth-light-green md:text-earth-green font-normal text-xs md:text-xl leading-3.5 md:leading-7 text-right w-fit">Scroll down ↓↓</p>

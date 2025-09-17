@@ -27,7 +27,7 @@ const CtaButton = ({ buttonText, href }: { buttonText: string, href: string }) =
                 </motion.div>
                 <div className="text-wrapper relative">
                     <motion.p layout className="text-earth-dark-green text-base md:text-xl font-semibold leading-6" variants={{ hovered: { opacity: 0 } }}>{buttonText}</motion.p>
-                    <motion.p layout className="text-earth-white text-base md:text-xl font-semibold leading-6 text-center absolute bottom-0 w-full opacity-0" variants={{ hovered: { opacity: 100 } }}>Let's Goo!</motion.p>
+                    <motion.p layout className="text-earth-white text-base md:text-xl font-semibold leading-6 text-center absolute bottom-0 w-full opacity-0" variants={{ hovered: { opacity: 100 } }}>Let&apos;s Goo!</motion.p>
                 </div>
             </motion.div>
         </Link>

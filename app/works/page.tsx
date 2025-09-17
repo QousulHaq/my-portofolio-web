@@ -1,8 +1,11 @@
 "use client"
 import { useEffect, useRef } from "react";
 
+import Link from "next/link";
+
 import CtaButton from "@/components/cta-button";
 import ImageCarousel from "@/components/image-carousel";
+import GithubIcon from "@/components/icons/social-media";
 
 import { motion, useScroll, useTransform } from "motion/react";
 import Lenis from "lenis";
@@ -10,21 +13,27 @@ import Lenis from "lenis";
 export default function Works() {
   const worksData = [
     {
+      title: "Web Based Online Exam Application",
+      description: `I developed the front-end of a web-based online examination platform. The system’s main feature is automated monitoring during exams using WebSocket technology, ensuring real-time supervision. My role in this project focused on migrating the front-end from Vue.js to React.js while implementing a newly redesigned user interface to improve usability and user experience.`,
+      background: "bg-earth-green",
+      link: "",
+      github: "",
+      imageUrls: [
+        {
+          link: "/porto-pa.mp4",
+          type: "video"
+        },
+      ]
+    },
+    {
       title: "Masami – Family Recipe Sharing Platform",
       description: `Masami is a web app I built to document and share family recipes. It supports full recipe CRUD, multi-family “rooms” under one account, and role-based features where members can request dishes and family heads can approve or decline them. The platform is designed to preserve culinary traditions while fostering collaboration within families.`,
       background: "bg-earth-dark-green",
       link: "https://recipe-web-frontend-five.vercel.app/dashboard",
+      github: "https://github.com/QousulHaq/front-end-sellerpintar-web",
       imageUrls: [
         {
-          link: "/IoT-1.mp4",
-          type: "video"
-        },
-        {
-          link: "https://placehold.co/646x300/png?text=foto",
-          type: "image"
-        },
-        {
-          link: "https://placehold.co/646x300/png?text=foto2",
+          link: "/foto-porto-masami-1.png",
           type: "image"
         },
       ]
@@ -34,17 +43,10 @@ export default function Works() {
       description: `A CRUD-based article platform built with admin and user roles, developed as part of a recruitment test for Sellerpintar. The main challenge was implementing a custom WYSIWYG editor using Slate.js, ensuring flexibility and a smooth writing experience.`,
       background: "bg-earth-brown",
       link: "https://front-end-sellerpintar-web.vercel.app/login",
+      github: "https://github.com/QousulHaq/front-end-sellerpintar-web",
       imageUrls: [
         {
-          link: "/IoT-1.mp4",
-          type: "video"
-        },
-        {
-          link: "https://placehold.co/646x300/png?text=foto",
-          type: "image"
-        },
-        {
-          link: "https://placehold.co/646x300/png?text=foto2",
+          link: "/foto-porto-sellerpintar-1.png",
           type: "image"
         },
       ]
@@ -54,17 +56,10 @@ export default function Works() {
       description: `A responsive portfolio website designed and built to showcase my projects, skills, and professional journey. It emphasizes clean UI, smooth navigation, and engaging presentation to reflect both technical expertise and creativity.`,
       background: "bg-earth-green",
       link: "https://front-end-sellerpintar-web.vercel.app/login",
+      github: "",
       imageUrls: [
         {
-          link: "/IoT-1.mp4",
-          type: "video"
-        },
-        {
-          link: "https://placehold.co/646x300/png?text=foto",
-          type: "image"
-        },
-        {
-          link: "https://placehold.co/646x300/png?text=foto2",
+          link: "/foto-porto-myweb-1.png",
           type: "image"
         },
       ]
@@ -153,21 +148,23 @@ export default function Works() {
                   {porto.description}
                 </p>
               </div>
-              <div className="cta">
+              <div className="cta flex justify-center items-center gap-3">
                 <CtaButton buttonText="Take a peek 👀" href={porto.link} />
+                {
+                  porto.github !== "" && (
+                    <Link href={porto.github} className="bg-icon p-3 md:p-4 rounded-full bg-slate-900">
+                      <GithubIcon />
+                    </Link>
+                  )
+                }
               </div>
             </div>
           </motion.section>
         ))}
       </div>
-
-      <div className="info-3d flex flex-col justify-center items-end fixed bottom-14 right-14 z-[999]">
-        <p className="text-earth-green font-normal text-xl leading-7"></p>
-        <p className="text-earth-green font-normal text-xl leading-7"></p>
-      </div>
-      <div className="info-3d hidden md:flex flex-col justify-center items-end fixed bottom-5 md:bottom-14 right-8 md:right-14 w-1/2 z-[999]">
-        <p className="text-earth-light-green md:text-earth-green font-normal text-base md:text-xl leading-5 md:leading-7 text-right">Scroll down ↓↓</p>
-        <p className="text-earth-light-green md:text-earth-green font-normal text-base md:text-xl leading-5 md:leading-7 text-right">to look another works</p>
+      <div className="info-3d flex flex-col justify-center items-end fixed bottom-5 md:bottom-14 right-8 md:right-14 z-[999] w-fit">
+        <p className="text-earth-light-green md:text-earth-green font-normal text-xs md:text-xl leading-3.5 md:leading-7 text-right w-fit">Scroll down ↓↓</p>
+        <p className="text-earth-light-green md:text-earth-green font-normal text-xs md:text-xl leading-3.5 md:leading-7 text-right w-fit">to look another works</p>
       </div>
     </div>
   );

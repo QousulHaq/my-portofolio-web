@@ -28,9 +28,9 @@ const NavLinks = () => {
                         ))}
                     </div>
                 ) : (
-                    <div className="menu-mobile-wrapper">
+                    <div className="menu-mobile-wrapper relative">
                         {/* Burger Menu button */}
-                        <button onClick={() => setIsOpen(true)}>
+                        <button onClick={() => setIsOpen(true)} className='absolute -top-2'>
                             <BurgerMenu color='black' className='size-4' />
                         </button>
 

@@ -17,7 +17,7 @@ export default function Home() {
               <CtaButton buttonText="Let's Connect 🤝" href="https://id.linkedin.com/in/ahmad-qousul-haq" />
             </div>
           </div>
-          <div className="3d-model-part w-full md:w-[45%] h-[60%] md:h-full">
+          <div className="3d-model-part w-full md:w-[65%] h-[60%] md:h-full">
             <ThreeCanvas fov={25}>
               <CharacterModel />
             </ThreeCanvas>

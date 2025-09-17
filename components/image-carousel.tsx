@@ -24,12 +24,16 @@ const ImageCarousel = ({ imageUrls }: { imageUrls: ImageUrlType[] }) => {
 
   return (
     <div className="works-image w-[300px] md:w-[646px] relative">
-      <button
-        className="arrow-right bg-earth-light-green w-fit px-2.5 py-3 rounded-full absolute top-1/2 -left-6 -translate-y-1/2 cursor-pointer"
-        onClick={() => { setSlide(-1) }}
-      >
-        <FrasurbaneArrow color="#373D20" className="rotate-180" />
-      </button>
+      {
+        imageUrls.length !== 1 && (
+          <button
+            className="arrow-right bg-earth-light-green w-fit px-2.5 py-3 rounded-full absolute top-1/2 -left-6 -translate-y-1/2 cursor-pointer"
+            onClick={() => { setSlide(-1) }}
+          >
+            <FrasurbaneArrow color="#373D20" className="rotate-180" />
+          </button>
+        )
+      }
       <AnimatePresence mode="wait" custom={directionState}>
         {
           imageUrls[selectedImage].type === "image" ? (
@@ -39,12 +43,16 @@ const ImageCarousel = ({ imageUrls }: { imageUrls: ImageUrlType[] }) => {
           )
         }
       </AnimatePresence>
-      <button
-        className="arrow-right bg-earth-light-green w-fit px-2.5 py-3 rounded-full absolute top-1/2 -right-6 -translate-y-1/2 cursor-pointer"
-        onClick={() => { setSlide(1) }}
-      >
-        <FrasurbaneArrow color="#373D20" />
-      </button>
+      {
+        imageUrls.length !== 1 && (
+          <button
+            className="arrow-right bg-earth-light-green w-fit px-2.5 py-3 rounded-full absolute top-1/2 -right-6 -translate-y-1/2 cursor-pointer"
+            onClick={() => { setSlide(1) }}
+          >
+            <FrasurbaneArrow color="#373D20" />
+          </button>
+        )
+      }
     </div >
   )
 }
@@ -82,10 +90,10 @@ const VideoSlide = ({ videoUrl }: { videoUrl: string }) => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 500 * direction }}
       transition={{ duration: 0.4 }}
-      className="video-wrapper w-fit h-fit overflow-hidden rounded-xl flex justify-center items-center"
+      className="video-wrapper w-fit overflow-hidden rounded-xl flex justify-center items-end h-[150px] md:h-[300px]"
     >
       <video width={isTabletOrMobile ? 300 : 646} height={isTabletOrMobile ? 150 : 300} controls preload="none">
-        <source src="/IoT-1.mp4" type="video/mp4" />
+        <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </motion.div>

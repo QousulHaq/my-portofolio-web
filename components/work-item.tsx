@@ -2,11 +2,11 @@
 import React from "react";
 import Link from "next/link";
 
-import { useTransform } from "motion/react";
-import { motion } from "motion/react";
+import { useTransform, motion, wrap } from "motion/react";
 
 import CtaButton from "./cta-button";
 import GithubIcon from "./icons/social-media";
+import { FigmaIcon } from "./icons/social-media";
 import ImageCarousel from "./image-carousel";
 
 import type { MotionValue } from "motion/react";
@@ -14,11 +14,13 @@ import type { MotionValue } from "motion/react";
 interface WorkData {
     title: string;
     description: string;
-    background: string;
     link: string;
     github: string;
+    figma: string;
     imageUrls: { link: string; type: string }[];
 }
+
+const worksBackground = ["bg-earth-green", "bg-earth-brown", "bg-earth-dark-green"]
 
 const WorkItem = ({
     porto,
@@ -32,6 +34,7 @@ const WorkItem = ({
     total: number;
 }) => {
     const scrollYFormula = (i: number) => 1 / (total - 1) * i;
+    const backgroundIndex = wrap(0, worksBackground.length, index)
 
     let inputRange: number[] = []
     let outputRange: number[] = []
@@ -74,7 +77,7 @@ const WorkItem = ({
     return (
         <motion.section
             style={{ scale, rotate }}
-            className={`first-section section sticky top-0 z-10 ${porto.background}`}
+            className={`first-section section sticky top-0 z-10 ${worksBackground[backgroundIndex]}`}
         >
             <div className="section-wrapper relative py-5 px-4 pt-12 md:p-14 flex flex-col justify-start md:justify-center items-center gap-5 md:gap-8 h-full">
                 <ImageCarousel imageUrls={porto.imageUrls} />
@@ -91,6 +94,11 @@ const WorkItem = ({
                     {porto.github !== "" && (
                         <Link href={porto.github} className="bg-icon p-3 md:p-4 rounded-full bg-slate-900" target="__blank">
                             <GithubIcon />
+                        </Link>
+                    )}
+                    {porto.figma !== "" && (
+                        <Link href={porto.figma} className="bg-icon p-3 md:p-4 rounded-full bg-earth-white" target="__blank">
+                            <FigmaIcon color="#766153" />
                         </Link>
                     )}
                 </div>

@@ -2,11 +2,13 @@
 import { useEffect, useRef } from "react";
 
 import WorkItem from "@/components/work-item";
+import { useViewportSize } from "@/utils/useBetterMediaQuery";
 
 import { useScroll } from "motion/react";
 import Lenis from "lenis";
 
 export default function Works() {
+  const { isTabletOrMobile } = useViewportSize()
   const worksData = [
     {
       title: "Web Based Online Exam Application",
@@ -148,8 +150,8 @@ export default function Works() {
 
       </div>
       <div className="info-3d flex flex-col justify-center items-end fixed bottom-5 md:bottom-14 right-8 md:right-14 z-[999] w-fit">
-        <p className="text-earth-light-green md:text-earth-green font-normal text-xs md:text-xl leading-3.5 md:leading-7 text-right w-fit">Scroll down ↓↓</p>
-        <p className="text-earth-light-green md:text-earth-green font-normal text-xs md:text-xl leading-3.5 md:leading-7 text-right w-fit">to look another works</p>
+        <p className="text-earth-light-green font-normal text-xs md:text-xl leading-3.5 md:leading-7 text-right w-fit">{isTabletOrMobile ? "Swipe up" : "Scroll down"} ↓↓</p>
+        <p className="text-earth-light-green font-normal text-xs md:text-xl leading-3.5 md:leading-7 text-right w-fit">to look another works</p>
       </div>
     </div>
   );

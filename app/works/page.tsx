@@ -37,19 +37,6 @@ export default function Works() {
       ]
     },
     {
-      title: "Masami – Family Recipe Sharing Platform",
-      description: `Masami is a web app I built to document and share family recipes. It supports full recipe CRUD, multi-family “rooms” under one account, and role-based features where members can request dishes and family heads can approve or decline them. The platform is designed to preserve culinary traditions while fostering collaboration within families.`,
-      link: "https://recipe-web-frontend-five.vercel.app/dashboard",
-      github: "https://github.com/QousulHaq/front-end-sellerpintar-web",
-      figma: "",
-      imageUrls: [
-        {
-          link: "/foto-porto-masami-1.png",
-          type: "image"
-        },
-      ]
-    },
-    {
       title: "Article Management Website",
       description: `A CRUD-based article platform built with admin and user roles, developed as part of a recruitment test for Sellerpintar. The main challenge was implementing a custom WYSIWYG editor using Slate.js, ensuring flexibility and a smooth writing experience. try to login using oioioi and password for (user) and banzai and password for (admin) [username, password]`,
       link: "https://front-end-sellerpintar-web.vercel.app/login",
@@ -58,6 +45,19 @@ export default function Works() {
       imageUrls: [
         {
           link: "/foto-porto-sellerpintar-1.png",
+          type: "image"
+        },
+      ]
+    },
+    {
+      title: "Masami – Family Recipe Sharing Platform",
+      description: `Masami is a web app I built to document and share family recipes. It supports full recipe CRUD, multi-family “rooms” under one account, and role-based features where members can request dishes and family heads can approve or decline them. The platform is designed to preserve culinary traditions while fostering collaboration within families.`,
+      link: "",
+      github: "https://github.com/QousulHaq/front-end-sellerpintar-web",
+      figma: "",
+      imageUrls: [
+        {
+          link: "/foto-porto-masami-1.png",
           type: "image"
         },
       ]

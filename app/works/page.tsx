@@ -11,19 +11,6 @@ export default function Works() {
   const { isTabletOrMobile } = useViewportSize()
   const worksData = [
     {
-      title: "Web Based Online Exam Application",
-      description: `I developed the front-end of a web-based online examination platform. The system’s main feature is automated monitoring during exams using WebSocket technology, ensuring real-time supervision. My role in this project focused on migrating the front-end from Vue.js to React.js while implementing a newly redesigned user interface to improve usability and user experience.`,
-      link: "",
-      github: "",
-      figma: "",
-      imageUrls: [
-        {
-          link: "/porto-pa.mp4",
-          type: "video"
-        },
-      ]
-    },
-    {
       title: "Personal Portfolio Website",
       description: `A responsive portfolio website designed and built to showcase my projects, skills, and professional journey. It emphasizes clean UI, smooth navigation, and engaging presentation to reflect both technical expertise and creativity.`,
       link: "https://my-portofolio-web-six.vercel.app",
@@ -50,6 +37,36 @@ export default function Works() {
       ]
     },
     {
+      title: "Web Based Online Exam Application",
+      description: `I developed the front-end of a web-based online examination platform. The system’s main feature is automated monitoring during exams using WebSocket technology, ensuring real-time supervision. My role in this project focused on migrating the front-end from Vue.js to React.js while implementing a newly redesigned user interface to improve usability and user experience.`,
+      link: "",
+      github: "",
+      figma: "",
+      imageUrls: [
+        {
+          link: "/porto-pa.mp4",
+          type: "video"
+        },
+      ]
+    },
+    {
+      title: "Office Route - Microsoft Office Learning Platform",
+      description: `I developed Office Route, a web-based learning platform focused on Microsoft Office software (Word, Excel, PowerPoint). The platform provides educational videos, quizzes, and certifications, offering a complete learning experience similar to modern e-learning platforms.`,
+      link: "",
+      github: "https://github.com/QousulHaq/office_route-backend",
+      figma: "https://www.figma.com/design/Mw2ipSxiins6BD4N8L4qny/OFFICE-ROUTE?node-id=0-1&p=f",
+      imageUrls: [
+        {
+          link: "/foto-porto-officeroute-1.png",
+          type: "image"
+        },
+        {
+          link: "/porto-officeroute.mp4",
+          type: "video"
+        },
+      ]
+    },
+    {
       title: "Masami – Family Recipe Sharing Platform",
       description: `Masami is a web app I built to document and share family recipes. It supports full recipe CRUD, multi-family “rooms” under one account, and role-based features where members can request dishes and family heads can approve or decline them. The platform is designed to preserve culinary traditions while fostering collaboration within families.`,
       link: "",
@@ -72,23 +89,6 @@ export default function Works() {
         {
           link: "/foto-porto-dinkominfo-1.png",
           type: "image"
-        },
-      ]
-    },
-    {
-      title: "Office Route - Microsoft Office Learning Platform",
-      description: `I developed Office Route, a web-based learning platform focused on Microsoft Office software (Word, Excel, PowerPoint). The platform provides educational videos, quizzes, and certifications, offering a complete learning experience similar to modern e-learning platforms.`,
-      link: "",
-      github: "https://github.com/QousulHaq/office_route-backend",
-      figma: "https://www.figma.com/design/Mw2ipSxiins6BD4N8L4qny/OFFICE-ROUTE?node-id=0-1&p=f",
-      imageUrls: [
-        {
-          link: "/foto-porto-officeroute-1.png",
-          type: "image"
-        },
-        {
-          link: "/porto-officeroute.mp4",
-          type: "video"
         },
       ]
     },

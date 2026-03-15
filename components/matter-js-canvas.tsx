@@ -50,6 +50,12 @@ const skills_set = [
         label: "NextJs", level: "advance"
     },
     {
+        label: "VueJs", level: "beginner"
+    },
+    {
+        label: "NuxtJs", level: "beginner"
+    },
+    {
         label: "Figma", level: "fluent"
     },
     {

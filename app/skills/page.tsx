@@ -26,8 +26,8 @@ export default function Skills() {
           <div className="matter-js-canvas w-full h-full">
             <MatterJsCanvas />
           </div>
-          <div className="info-3d flex flex-col justify-center items-end absolute bottom-14 right-5 md:bottom-10 md:right-7">
-            <p className="text-earth-green font-semibold md:font-bold text-2xl md:text-5xl leading-5 md:leading-12 select-none">My skills_</p>
+          <div className="info-3d flex flex-col justify-center items-end absolute bottom-14 right-5 md:bottom-6 md:right-7 pointer-events-none">
+            <p className="text-earth-green font-semibold md:font-bold text-xl md:text-4xl leading-5 md:leading-12 select-none">My skills_</p>
           </div>
         </div>
       </section>

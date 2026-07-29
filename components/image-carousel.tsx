@@ -11,8 +11,6 @@ type ImageUrlType = {
 }
 
 const ImageCarousel = ({ imageUrls }: { imageUrls: ImageUrlType[] }) => {
-  const { isTabletOrMobile } = useViewportSize()
-
   const [selectedImage, setSelectedImage] = useState(0)
   const [directionState, setDirectionState] = useState(1)
 
@@ -23,7 +21,7 @@ const ImageCarousel = ({ imageUrls }: { imageUrls: ImageUrlType[] }) => {
   }
 
   return (
-    <div className="works-image w-[300px] md:w-[646px] relative">
+    <div className="works-image w-[300px] md:w-[646px] lg:w-[800px] relative">
       {
         imageUrls.length !== 1 && (
           <button
@@ -60,7 +58,7 @@ const ImageCarousel = ({ imageUrls }: { imageUrls: ImageUrlType[] }) => {
 export default ImageCarousel
 
 const ImageSlide = ({ imageUrl }: { imageUrl: string }) => {
-  const { isTabletOrMobile } = useViewportSize()
+  const { isMobile, isTablet } = useViewportSize()
   const direction = usePresenceData()
   return (
     <motion.div
@@ -72,8 +70,8 @@ const ImageSlide = ({ imageUrl }: { imageUrl: string }) => {
     >
       <Image
         src={`${imageUrl}`}
-        width={isTabletOrMobile ? 300 : 646}
-        height={isTabletOrMobile ? 150 : 300}
+        width={isMobile ? 300 : isTablet ? 646 : 800}
+        height={isMobile ? 150 : isTablet ? 300 : 400}
         alt="project-pict"
         className="rounded-[8px] md:rounded-[12px] object-cover"
       />
@@ -82,7 +80,7 @@ const ImageSlide = ({ imageUrl }: { imageUrl: string }) => {
 }
 
 const VideoSlide = ({ videoUrl }: { videoUrl: string }) => {
-  const { isTabletOrMobile } = useViewportSize()
+  const { isMobile, isTablet } = useViewportSize()
   const direction = usePresenceData()
   return (
     <motion.div
@@ -90,9 +88,9 @@ const VideoSlide = ({ videoUrl }: { videoUrl: string }) => {
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 500 * direction }}
       transition={{ duration: 0.4 }}
-      className="video-wrapper w-fit overflow-hidden rounded-xl flex justify-center items-end h-[150px] md:h-[300px]"
+      className="video-wrapper w-fit overflow-hidden rounded-xl flex justify-center items-end h-[150px] md:h-[300px] xl:h-[400px]"
     >
-      <video width={isTabletOrMobile ? 300 : 646} height={isTabletOrMobile ? 150 : 300} controls preload="none">
+      <video width={isMobile ? 300 : isTablet ? 646 : 800} height={isMobile ? 150 : isTablet ? 300 : 400} controls preload="none">
         <source src={videoUrl} type="video/mp4" />
         Your browser does not support the video tag.
       </video>

@@ -5,7 +5,7 @@ export default function Skills() {
     <>
       <section className="first-section section bg-[url(/grid.png)] bg-cover bg-no-repeat bg-center bg-earth-dark-green">
         <div className="section-wrapper relative flex flex-col justify-between items-center h-full">
-          <div className="skills-level flex flex-col md:flex-row justify-center items-start md:items-center gap-3 md:gap-8 absolute top-7 md:top-14 left-7 md:left-auto z-50 select-none">
+          <div className="skills-level flex flex-col md:flex-row justify-center items-start md:items-center gap-3 md:gap-8 absolute top-7 md:top-5 left-7 md:left-auto z-50 select-none">
             <div className="skill-item flex justify-center items-center gap-2">
               <div className="level-color p-1.5 md:p-2.5 rounded-full bg-earth-white w-fit"></div>
               <p className="text-earth-white text-sm md:text-lg font-normal leading-5 md:leading-8">Beginner</p>

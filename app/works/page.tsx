@@ -147,7 +147,6 @@ export default function Works() {
             total={worksData.length}
           />
         ))}
-
       </div>
       <div className="info-3d flex flex-col justify-center items-end fixed bottom-5 md:bottom-14 right-8 md:right-14 z-[999] w-fit">
         <p className="text-earth-light-green font-normal text-xs md:text-xl leading-3.5 md:leading-7 text-right w-fit">{isTabletOrMobile ? "Swipe up" : "Scroll down"} ↓↓</p>

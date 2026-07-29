@@ -33,10 +33,10 @@ const textVariant = {
 }
 
 const Navbar = ({ children }: { children: React.ReactNode }) => {
-    const { isTabletOrMobile } = useViewportSize()
+    const { isMobile } = useViewportSize()
     return (
         <>
-            <nav className='nav-container px-3.5 mt-5 md:px-7 md:mt-7'>
+            <nav className='nav-container px-3.5 mt-4.5 md:px-7'>
                 <div className="nav-wrapper flex justify-between items-center">
                     <motion.div
                         className="home-button-wrapper flex justify-center items-center gap-2"
@@ -44,7 +44,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                         initial={"initial"}
                     >
                         <Link href={"https://instagram.com/qousulhaq"} className='relative overflow-hidden' target='__blank'>
-                            <motion.p className='font-medium text-xs md:text-base leading-3 md:leading-7' variants={textVariant}>
+                            <motion.p className='font-medium text-xs lg:text-sm leading-3 md:leading-7' variants={textVariant}>
                                 <motion.span
                                     variants={{
                                         initial: { y: 0 },
@@ -56,7 +56,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                                 </motion.span>
                                 {splitLetters("@qousulhaq", 28)}
                             </motion.p>
-                            <motion.p className='font-medium text-xs md:text-base leading-3 md:leading-7 absolute -bottom-7' variants={textVariant}>
+                            <motion.p className='font-medium text-xs lg:text-sm leading-3 md:leading-7 absolute -bottom-7' variants={textVariant}>
                                 <motion.span
                                     variants={{
                                         initial: { y: 0 },
@@ -86,7 +86,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                     >
                         <Link href="https://drive.google.com/file/d/1jmzjsh67FzKj_8QcmnIEgvIzsNe7bztG/view?usp=sharing" target="_blank">
                             <ul className='list-disc list-inside'>
-                                <li className='font-medium text-xs md:text-base leading-3 md:leading-7'>
+                                <li className='font-medium text-xs lg:text-sm leading-3 md:leading-7'>
                                     Curriculum vitae
                                 </li>
                             </ul>
@@ -95,12 +95,28 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                             variants={arrowVariant}
                             className='absolute right-0 bottom-1/2 translate-y-1/2'
                         >
-                            <FrasurbaneArrow color='#000' />
+                            <FrasurbaneArrow color='#000' className='size-4' />
                         </motion.div>
                     </motion.div>
                 </div>
             </nav>
-            <div className="navbar w-[100%] h-[100vh] bg-earth-white fixed top-0 left-0 z-50 overflow-hidden" style={{ clipPath: `${isTabletOrMobile ? "inset(52px 14px 14px 14px round 8px)" : "inset(84px 28px 28px 28px round 12px)"}`, WebkitClipPath: `${isTabletOrMobile ? "inset(52px 14px 14px 14px round 8px)" : "inset(84px 28px 28px 28px round 12px)"}`, margin: 0, padding: 0 }}>
+            <div 
+                className="navbar w-[100%] h-[100vh] bg-earth-white fixed top-0 left-0 z-50 overflow-hidden" 
+                style={{ 
+                    clipPath: `${
+                        isMobile ? 
+                            "inset(52px 14px 14px 14px round 8px)" 
+                            : 
+                            "inset(65px 28px 28px 28px round 12px)"}`, 
+                    WebkitClipPath: `${
+                        isMobile ? 
+                            "inset(52px 14px 14px 14px round 8px)" 
+                            : 
+                            "inset(65px 28px 28px 28px round 12px)"}`, 
+                    margin: 0, 
+                    padding: 0 
+                }}
+            >
                 {children}
             </div>
         </>

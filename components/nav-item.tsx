@@ -21,7 +21,7 @@ const NavItem = ({ href, text, ...props }: NavItemProps) => {
             <motion.div className="link-wrapper flex gap-2.5 items-center justify-center" whileHover="hovered">
                 <div className="text-underline-wrapper relative">
                     <div className="text-wrapper relative overflow-hidden">
-                        <p className='font-medium text-3xl md:text-base'>{text}</p>
+                        <p className='font-medium text-3xl lg:text-sm'>{text}</p>
                     </div>
                     {
                         pathname === href && (
@@ -37,7 +37,7 @@ const NavItem = ({ href, text, ...props }: NavItemProps) => {
                     transition={{ duration: 0.5, type: "spring" }}
                     className="icon-wrapper"
                 >
-                    <UpRightArrow color='#000' className='size-10 md:size-auto' />
+                    <UpRightArrow color='#000' className='size-10 md:size-5' />
                 </motion.div>
             </motion.div>
         </Link >

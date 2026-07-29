@@ -80,27 +80,33 @@ const WorkItem = ({
             className={`first-section section sticky top-0 z-10 ${worksBackground[backgroundIndex]}`}
         >
             <div className="section-wrapper relative py-5 px-4 pt-12 md:p-14 flex flex-col justify-start md:justify-center items-center gap-5 md:gap-8 h-full">
-                <ImageCarousel imageUrls={porto.imageUrls} />
-                <div className="title-and-desc flex flex-col justify-center items-center gap-1.5">
-                    <h1 className="text-earth-white text-2xl md:text-3xl font-bold text-center leading-7 md:leading-10">
-                        {porto.title}
-                    </h1>
-                    <p className="text-earth-white text-base md:text-xl font-normal text-center w-full md:w-3/4">
-                        {porto.description}
-                    </p>
-                </div>
-                <div className="cta flex justify-center items-center gap-3">
-                    <CtaButton buttonText="Take a peek 👀" href={porto.link} />
-                    {porto.github !== "" && (
-                        <Link href={porto.github} className="bg-icon p-3 md:p-4 rounded-full bg-slate-900" target="__blank">
-                            <GithubIcon />
-                        </Link>
-                    )}
-                    {porto.figma !== "" && (
-                        <Link href={porto.figma} className="bg-icon p-3 md:p-4 rounded-full bg-earth-white" target="__blank">
-                            <FigmaIcon color="#766153" />
-                        </Link>
-                    )}
+                <div className="wrapper-content flex flex-col xl:flex-row justify-center items-center xl:items-start gap-10">
+                    <div className="image-wrapper">
+                        <ImageCarousel imageUrls={porto.imageUrls} />
+                    </div>
+                    <div className="content-wrapper flex flex-col justify-center items-center xl:items-start">
+                        <div className="title-and-desc flex flex-col justify-center items-center xl:items-start gap-1.5">
+                            <h1 className="text-earth-white text-lg md:text-2xl font-bold text-center xl:text-start leading-7 md:leading-10">
+                                {porto.title}
+                            </h1>
+                            <p className="text-earth-white text-sm md:text-base font-normal text-center xl:text-start w-full md:w-3/4">
+                                {porto.description}
+                            </p>
+                        </div>
+                        <div className="cta flex items-center gap-3 mt-8">
+                            <CtaButton buttonText="Take a peek 👀" href={porto.link} />
+                            {porto.github !== "" && (
+                                <Link href={porto.github} className="bg-icon p-3 md:p-4 rounded-full bg-slate-900" target="__blank">
+                                    <GithubIcon />
+                                </Link>
+                            )}
+                            {porto.figma !== "" && (
+                                <Link href={porto.figma} className="bg-icon p-3 md:p-4 rounded-full bg-earth-white" target="__blank">
+                                    <FigmaIcon color="#766153" />
+                                </Link>
+                            )}
+                        </div>
+                    </div>
                 </div>
             </div>
         </motion.section>

@@ -11,7 +11,7 @@ export default function Home() {
             <div className="text-part space-y-1 md:space-y-3">
               <h1 className="text-earth-white text-3xl md:text-5xl font-bold text-center md:text-start">Building Engaging &</h1>
               <h1 className="text-earth-white text-3xl md:text-5xl font-bold text-center md:text-start">Scalable Web Experiences</h1>
-              <p className="text-earth-white text-sm md:text-xl font-normal text-center md:text-start w-full md:w-[645px] mt-3 md:mt-0">I’m <span className="font-lora italic">Ahmad Qousul Haq</span>, a Frontend Developer passionate about crafting interactive and user-friendly digital solutions with React.js, Laravel, and modern web technologies.”</p>
+              <p className="text-earth-white text-sm md:text-lg font-normal text-center md:text-start w-full md:w-[645px] mt-3 md:mt-0">I’m <span className="font-lora italic">Ahmad Qousul Haq</span>, a Frontend Developer passionate about crafting interactive and user-friendly digital solutions with React.js, Next.js, and modern web technologies.”</p>
             </div>
             <div className="cta-part w-fit mx-auto md:mx-0">
               <CtaButton buttonText="Let's Connect 🤝" href="https://id.linkedin.com/in/ahmad-qousul-haq" />

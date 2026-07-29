@@ -17,12 +17,16 @@ export default function useBetterMediaQuery(mediaQueryString: string) {
 
 export function useViewportSize() {
     const isBigScreen = useBetterMediaQuery('(min-width: 1824px)')
+    const isMobile = useBetterMediaQuery('(max-width: 767px)')
+    const isTablet = useBetterMediaQuery('(min-width: 767px) and (max-width: 1224px)')
     const isTabletOrMobile = useBetterMediaQuery('(max-width: 1224px)')
     const isPortrait = useBetterMediaQuery('(orientation: portrait)')
     const isRetina = useBetterMediaQuery('(min-resolution: 2dppx)')
     return {
         isBigScreen,
         isTabletOrMobile,
+        isMobile,
+        isTablet,
         isPortrait,
         isRetina
     }

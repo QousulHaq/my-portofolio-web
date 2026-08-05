@@ -44,10 +44,10 @@ const skills_set = [
         label: "Github", level: "advance"
     },
     {
-        label: "ReactJs", level: "advance"
+        label: "ReactJs", level: "fluent"
     },
     {
-        label: "NextJs", level: "advance"
+        label: "NextJs", level: "fluent"
     },
     {
         label: "VueJs", level: "beginner"

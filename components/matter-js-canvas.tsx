@@ -112,7 +112,7 @@ export default function PhysicsBox() {
 
         // add 11 pill shapes
         const pills: Matter.Body[] = []
-        for (let i = 0; i < 11; i++) {
+        for (let i = 0; i < skills_set.length; i++) {
             const textWidth = tempCtx.measureText(skills_set[i].label).width
 
             const paddingX = 50

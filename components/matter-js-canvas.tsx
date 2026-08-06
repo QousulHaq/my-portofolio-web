@@ -59,6 +59,42 @@ const skills_set = [
     {
         label: "HTML", level: "fluent"
     },
+    {
+        label: " ", level: "beginner"
+    },
+    {
+        label: " ", level: "intermediate"
+    },
+    {
+        label: " ", level: "advance"
+    },
+    {
+        label: " ", level: "fluent"
+    },
+    {
+        label: " ", level: "beginner"
+    },
+    {
+        label: " ", level: "intermediate"
+    },
+    {
+        label: " ", level: "advance"
+    },
+    {
+        label: " ", level: "fluent"
+    },
+    {
+        label: " ", level: "beginner"
+    },
+    {
+        label: " ", level: "intermediate"
+    },
+    {
+        label: " ", level: "advance"
+    },
+    {
+        label: " ", level: "fluent"
+    },
 ]
 
 export default function PhysicsBox() {

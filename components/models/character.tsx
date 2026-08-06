@@ -40,8 +40,9 @@ type GLTFResult = GLTF & {
 export function CharacterModel(props: ModelProps) {
     const group = useRef<THREE.Group>(null!)
     const [animationIndex, setAnimationIndex] = useState<number>(4)
+    const prevActionRef = useRef<THREE.AnimationAction | null>(null) // simpan aksi sebelumnya
 
-    const { nodes, materials, animations } = useGLTF(
+     const { nodes, materials, animations } = useGLTF(
         "/profileCharacterAnimated.glb"
     ) as GLTFResult & ObjectMap
     const { actions, names } = useAnimations(animations, group)
@@ -50,16 +51,21 @@ export function CharacterModel(props: ModelProps) {
     const numbers = [0, 4, 5]
 
     useEffect(() => {
-        const actionName = names[animationIndex]
-        if (actionName && actions[actionName]) {
-            actions[actionName].reset().fadeIn(0.5).play()
+        const currentActionName = names[animationIndex]
+        if (!currentActionName) return
+        const currentAction = actions[currentActionName]
+        if (!currentAction) return
+
+        // Fade out animasi sebelumnya (jika ada dan berbeda)
+        if (prevActionRef.current && prevActionRef.current !== currentAction) {
+            prevActionRef.current.fadeOut(0.5)   // hanya fade out, tanpa stop
         }
 
-        return () => {
-            if (actionName && actions[actionName]) {
-                actions[actionName].fadeOut(0.5).stop()
-            }
-        }
+        // Mulai animasi baru dari awal dengan fade in
+        currentAction.reset().fadeIn(0.5).play()
+        prevActionRef.current = currentAction
+
+        // Tidak perlu cleanup, karena fade out akan terjadi di pergantian berikutnya
     }, [animationIndex, actions, names])
 
     const changeAnimation = () => {
@@ -80,7 +86,7 @@ export function CharacterModel(props: ModelProps) {
             scale={viewport.width < 3 ? 0.7 : 1.15}
         >
             <group name="Scene">
-                <group name="MainArmature" position={[0, -1.3, 0]}>
+                <group name="MainArmature" position={viewport.width < 1.7 ? [0, -1.5, 0] : [0.9, -1.25, 0]}>
                     <skinnedMesh
                         name="EyeLeft"
                         geometry={nodes.EyeLeft.geometry}

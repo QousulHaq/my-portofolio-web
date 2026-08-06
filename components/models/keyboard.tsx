@@ -60,7 +60,7 @@ export function KeyboardModel(props: ModelProps) {
 
     return (
         <group {...props} dispose={null} ref={containerModel}>
-            <group scale={viewport.width < 3 ? 0.00085 : 0.0013} position={[0, 0.1, 0]} rotation={[1, 0.5, -0.3]}>
+            <group scale={viewport.width < 3 ? 0.001115 : 0.0022} position={[0, 0.2, 0]} rotation={[0.75, 0.75, -0.55]}>
                 <mesh
                     castShadow
                     receiveShadow

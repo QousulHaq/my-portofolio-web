@@ -7,6 +7,8 @@ import { useViewportSize } from "@/utils/useBetterMediaQuery";
 import { useScroll } from "motion/react";
 import Lenis from "lenis";
 
+import type { Work } from "@/lib/types";
+
 const worksData = [
   {
     is_active: true,
@@ -114,7 +116,7 @@ const worksData = [
 
 export default function Works() {
   const { isTabletOrMobile } = useViewportSize()
-  const [sanitizedData, setSanitizedData] = useState<any[]>([]);
+  const [sanitizedData, setSanitizedData] = useState<Work[]>([]);
 
   const container = useRef(null);
   const scrollTarget = useRef(null);

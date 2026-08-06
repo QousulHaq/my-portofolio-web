@@ -154,7 +154,7 @@ export default function Works() {
     <div className="section-container relative w-[100%] h-[100vh] overflow-y-scroll" ref={container}>
       <div className="section-wrapper bg-black" ref={scrollTarget}>
         {sanitizedData.map((porto, i) => {
-          let worksSection = []
+          const worksSection = []
           if (porto.is_active) {
             worksSection.push(
               <WorkItem

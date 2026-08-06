@@ -4,11 +4,6 @@ import React, { useRef, useEffect } from "react"
 import Matter from "matter-js"
 import { useViewportSize } from "@/utils/useBetterMediaQuery"
 
-const pillLabels = [
-    "ReactJs", "NextJs", "Tailwind", "Laravel", "CSS",
-    "HTML", "PHP", "MySQL", "Javascript", "Github", "Figma"
-]
-
 const skills_color = {
     beginner: {
         bg: "#EFF1ED", text: "#373D20"

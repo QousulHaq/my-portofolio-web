@@ -16,7 +16,7 @@ const worksData = [
     description: `A responsive portfolio website designed and built to showcase my projects, skills, and professional journey. It emphasizes clean UI, smooth navigation, and engaging presentation to reflect both technical expertise and creativity.`,
     link: "https://my-portofolio-web-six.vercel.app",
     github: "https://github.com/QousulHaq/my-portofolio-web",
-    figma: "",
+    figma: "https://www.figma.com/design/DILwt9COG7jFaa2NUZL5dj/Web-Portofolio?node-id=0-1&t=BCD5xEwMPBT7olbD-1",
     imageUrls: [
       {
         link: "/foto-porto-myweb-1.png",

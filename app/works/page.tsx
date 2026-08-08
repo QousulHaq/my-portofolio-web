@@ -89,7 +89,7 @@ const worksData = [
     title: "Public Information Website - Dinkominfo Surabaya",
     description: `I contributed to the development of a public information website for Surabaya’s official government portal (surabaya.go.id). My role involved redesigning the website using Figma and developing the front-end with Next.js, focusing on creating a more user-friendly and modern interface to enhance public communication and accessibility.`,
     link: "https://surabaya.go.id",
-    github: "https://github.com/Qousul/surabaya-go-id-new",
+    github: "",
     figma: "https://www.figma.com/design/MbL23o37T6IYwKapWe2BSk/REDESAIN-SURABAYA.GO.ID?node-id=297-3&p=f",
     imageUrls: [
       {

@@ -112,6 +112,20 @@ const worksData = [
       },
     ]
   },
+  {
+    is_active: true,
+    title: "LangGO - Belajar Bahasa",
+    description: "An interactive vocabulary management and language-learning web application designed to help users effortlessly capture and master new words. By leveraging built-in OCR technology, users can automatically extract text from photos, while simply inputting a word triggers auto-generated meanings and contextual usage examples. Complete with an interactive flashcard system for active recall, it provides an efficient, streamlined solution for self-learners looking to collect and retain vocabulary encountered in books, digital media, or daily life.",
+    link: "https://lang-go-drab.vercel.app",
+    github: "",
+    figma: "",
+    imageUrls: [
+      {
+        link: "/lang-go-banner.png",
+        type: "image"
+      },
+    ]
+  },
 ]
 
 export default function Works() {

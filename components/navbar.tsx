@@ -84,7 +84,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                             },
                         }}
                     >
-                        <Link href="https://drive.google.com/file/d/1jmzjsh67FzKj_8QcmnIEgvIzsNe7bztG/view?usp=sharing" target="_blank">
+                        <Link href="https://drive.google.com/file/d/1g4I_IgOZTG7RHKQ-e8U2EcUd2fXQ3ek1/view?usp=sharing" target="_blank">
                             <ul className='list-disc list-inside'>
                                 <li className='font-medium text-xs lg:text-sm leading-3 md:leading-7'>
                                     Curriculum vitae
@@ -100,21 +100,21 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
                     </motion.div>
                 </div>
             </nav>
-            <div 
-                className="navbar w-[100%] h-[100vh] bg-earth-white fixed top-0 left-0 z-50 overflow-hidden" 
-                style={{ 
+            <div
+                className="navbar w-[100%] h-[100vh] bg-earth-white fixed top-0 left-0 z-50 overflow-hidden"
+                style={{
                     clipPath: `${
-                        isMobile ? 
-                            "inset(52px 14px 14px 14px round 8px)" 
-                            : 
-                            "inset(65px 28px 28px 28px round 12px)"}`, 
+                        isMobile ?
+                            "inset(52px 14px 14px 14px round 8px)"
+                            :
+                            "inset(65px 28px 28px 28px round 12px)"}`,
                     WebkitClipPath: `${
-                        isMobile ? 
-                            "inset(52px 14px 14px 14px round 8px)" 
-                            : 
-                            "inset(65px 28px 28px 28px round 12px)"}`, 
-                    margin: 0, 
-                    padding: 0 
+                        isMobile ?
+                            "inset(52px 14px 14px 14px round 8px)"
+                            :
+                            "inset(65px 28px 28px 28px round 12px)"}`,
+                    margin: 0,
+                    padding: 0
                 }}
             >
                 {children}

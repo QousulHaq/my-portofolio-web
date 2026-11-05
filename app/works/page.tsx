@@ -12,14 +12,32 @@ import type { Work } from "@/lib/types";
 const worksData = [
   {
     is_active: true,
-    title: "Personal Portfolio Website",
-    description: `A responsive portfolio website designed and built to showcase my projects, skills, and professional journey. It emphasizes clean UI, smooth navigation, and engaging presentation to reflect both technical expertise and creativity.`,
-    link: "https://my-portofolio-web-six.vercel.app",
-    github: "https://github.com/QousulHaq/my-portofolio-web",
-    figma: "https://www.figma.com/design/DILwt9COG7jFaa2NUZL5dj/Web-Portofolio?node-id=0-1&t=BCD5xEwMPBT7olbD-1",
+    title: "Karmaserve - ERP",
+    description: "Karmaserve is an integrated Enterprise Resource Planning (ERP) platform designed to streamline financial and operational management for multi-entity businesses, particularly in the food & beverage and retail industries. The platform brings together essential business processes, including accounting, inventory management, procurement, sales, payment management, and reporting, into a centralized system. It provides comprehensive tools for managing business transactions, monitoring operations, and maintaining financial records, helping organizations improve efficiency, data consistency, and visibility across multiple business units. Currently Iam working at core ERP Modules such as Bill, Inventory, Master, Purchasing, Accounting, and Sales",
+    link: "",
+    github: "",
+    figma: "",
     imageUrls: [
       {
-        link: "/foto-porto-myweb-1.png",
+        link: "/karmalogo.png",
+        type: "image"
+      },
+      {
+        link: "/karmaserve-overview.webm",
+        type: "video"
+      },
+    ]
+  },
+  {
+    is_active: true,
+    title: "LangGO - Belajar Bahasa ()",
+    description: "An interactive vocabulary management and language-learning web application designed to help users effortlessly capture and master new words. By leveraging built-in OCR technology, users can automatically extract text from photos, while simply inputting a word triggers auto-generated meanings and contextual usage examples. Complete with an interactive flashcard system for active recall, it provides an efficient, streamlined solution for self-learners looking to collect and retain vocabulary encountered in books, digital media, or daily life. - AI-assisted development",
+    link: "https://lang-go-drab.vercel.app",
+    github: "",
+    figma: "",
+    imageUrls: [
+      {
+        link: "/lang-go-banner.png",
         type: "image"
       },
     ]
@@ -114,14 +132,14 @@ const worksData = [
   },
   {
     is_active: true,
-    title: "LangGO - Belajar Bahasa",
-    description: "An interactive vocabulary management and language-learning web application designed to help users effortlessly capture and master new words. By leveraging built-in OCR technology, users can automatically extract text from photos, while simply inputting a word triggers auto-generated meanings and contextual usage examples. Complete with an interactive flashcard system for active recall, it provides an efficient, streamlined solution for self-learners looking to collect and retain vocabulary encountered in books, digital media, or daily life.",
-    link: "https://lang-go-drab.vercel.app",
-    github: "",
-    figma: "",
+    title: "Personal Portfolio Website",
+    description: `A responsive portfolio website designed and built to showcase my projects, skills, and professional journey. It emphasizes clean UI, smooth navigation, and engaging presentation to reflect both technical expertise and creativity.`,
+    link: "https://my-portofolio-web-six.vercel.app",
+    github: "https://github.com/QousulHaq/my-portofolio-web",
+    figma: "https://www.figma.com/design/DILwt9COG7jFaa2NUZL5dj/Web-Portofolio?node-id=0-1&t=BCD5xEwMPBT7olbD-1",
     imageUrls: [
       {
-        link: "/lang-go-banner.png",
+        link: "/foto-porto-myweb-1.png",
         type: "image"
       },
     ]
